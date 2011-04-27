@@ -19,9 +19,7 @@ def process_inbox():
 		f = open(file[0])
 		posts.insert(0, make_blogpost(f.read()))
 		f.close()
-
 		os.rename(file[0], file[1])
-
 	if len(posts):
 		print "found new posts"
 		posts.extend(pickle.load(open("posts.pickled")))
