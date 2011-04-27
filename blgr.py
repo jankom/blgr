@@ -4,14 +4,10 @@ SETUP = {
 	"template": "basic"
 }
 
-MEMO = {}
+MEMO = {} #we memoize templates
 
-import unicodedata
-import pickle
 from BeautifulSoup import BeautifulSoup
-import datetime, re, os, errno
-
-print "123"
+import unicodedata, pickle, datetime, re, os, errno
 
 def process_inbox():
 	posts = []
