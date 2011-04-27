@@ -6,12 +6,13 @@ very crude and minimal cron-based static blog engine written in under 100 lines 
 ~> Why
 
 - I need a blog for my webapps
-- I don't and don't intend to have apache/php/mysql to install Wordpress (and it's too big and a security liability)
+- I don't and don't intend to run apache/php/mysql to have Wordpress (and it's too big and a security liability)
 - I used blogger but that doesn't give me any seo juice 
 	(you can only make it part of your website on DNS level, so with a subdomain. Google sees subdomains as
 	different websites altogether)
 - I don't want to install/run anything additional on the app machine to have blog
-- So I need a static blog, I wrote posts in raw html in WP/blogger anyway, so vim + html code for posts is all I need.
+- So I need a static blog
+- I wrote posts in raw html in WP/blogger anyway, so vim + html code for posts is all I need (markup can be added)
 
 
 ~> How to blog
