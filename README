@@ -10,10 +10,15 @@ very crude and minimal cron-based static blog engine written in under 100 lines 
 - I used blogger but that doesn't give me any seo juice 
 	(you can only make it part of your website on DNS level, so with a subdomain. Google sees subdomains as
 	different websites altogether)
-- I don't want to install/run anything additional on the app machine to have blog
+- I don't want to install/run anything additional on the app machine to have a blog
 - So I need a static blog
-- I wrote posts in raw html in WP/blogger anyway, so vim + html code for posts is all I need (markup can be added)
+- I wrote posts in raw html in WP/blogger anyway, so vim + html code for posts is all I need (markdown could be simply added)
 
+
+~> Why python
+
+- it's already installed on most linux servers and is more reasonable than alternatives (php, perl..)
+- it has the regex and markdown libs
 
 ~> How to blog
 
