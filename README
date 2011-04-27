@@ -1,0 +1,28 @@
+~> BLGR <~
+
+very crude and minimal cron-based static blog engine written in under 100 lines of python
+
+~> Why
+
+- I need a blog for my webapps
+- I don't and don't intend to have apache/php/mysql to install Wordpress (and it's too big and a security liability)
+- I used blogger but that doesn't give me any seo juice 
+	(you can only make it part of your website on DNS level, so with a subdomain. Google sees subdomains as
+	different websites altogether)
+- I don't want to install/run anything additional on the app machine to have blog
+- So I need a static blog, I wrote posts in raw html in WP/blogger anyway, so vim + html code for posts is all I need.
+
+~> How to blog
+
+- Add posts as separate files in inbox folder
+- run blgr.py or set is as a cronjob
+- files that begin with zzz__ are already turned into posts and should get deleted periodically (will add)
+- index page generation will get a little fancyer once I have enough blogposts to care and test it..
+
+~> Conventions
+
+first <h2> in a post file is a title of the file.
+
+~> History
+
+25.Apr.2011: FIRST ALPHA VERSION
