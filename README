@@ -20,6 +20,7 @@ very crude and minimal cron-based static blog engine written in under 100 lines 
 - it's already installed on most linux servers and is more reasonable than alternatives (php, perl..)
 - it has the regex and markdown libs
 
+
 ~> How to blog
 
 - Add posts as separate files in inbox folder
