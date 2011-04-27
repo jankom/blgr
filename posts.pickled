@@ -1,0 +1,32 @@
+(lp0
+(dp1
+S'month'
+p2
+I4
+sS'year'
+p3
+I2011
+sS'slug'
+p4
+Vthis-is-the-second-post
+p5
+sS'title'
+p6
+S'This is the second post'
+p7
+sa(dp8
+S'title'
+p9
+S'This is the title'
+p10
+sS'year'
+p11
+I2011
+sS'slug'
+p12
+Vthis-is-the-title
+p13
+sS'month'
+p14
+I4
+sa.
