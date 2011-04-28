@@ -1,0 +1,17 @@
+(lp0
+(dp1
+S'month'
+p2
+I4
+sS'year'
+p3
+I2011
+sS'slug'
+p4
+Vhello-world-hello-blgr
+p5
+sS'title'
+p6
+S'Hello World & Hello [blgr]'
+p7
+sa.

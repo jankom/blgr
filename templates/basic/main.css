@@ -1,0 +1,69 @@
+body{
+	background-color: white;
+	margin: 0px;
+	padding: 20px 30px;
+	width: 900px;
+}
+body, p, div, td {
+	font-family: Tahoma, "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 14px;
+}
+#header {
+	padding: 10px 0px 20px 0px;
+	font-weight: bold;
+}
+#header a {
+	color: gray;
+	font-size: 29px;
+}
+div#menu {
+	font-size: 14px;
+	float: right;
+	width: 220px;
+	margin-left: 30px;
+}
+div#menu div {
+	border-left: 1px solid silver;
+	padding: 1px 15px;
+	font-size: 14px;
+	color: white;
+	background-color: gray;
+	margin-bottom: 30px;
+}
+div#menu div a {
+	color: #6385A1;
+	padding: 0px 5px;
+}
+#footer {
+	color: gray;
+	padding: 20px;
+	border-top: 1px dashed green;
+	text-align: center;
+}
+#footer a {
+
+}
+a {
+	text-decoration: none;
+	color: #0064C4;
+}
+a:hover {
+	text-decoration: underline;
+}
+#header h1 a  {
+	color: #CD5C5C;
+}
+h2 {
+	color: gray;
+}
+ul#posts  {
+	padding-left: 0px;
+	font-family: Helvetica, sans-serif;
+}
+ul#posts li {
+	list-style: none;
+	padding-top: 5px;
+}
+ul#posts li a {
+	font-size: 15px;
+}

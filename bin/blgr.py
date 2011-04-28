@@ -1,5 +1,5 @@
 SETUP = {
-	"blog-title": "UsrJoy Blog",
+	"blog-title": "Refaktor Labs Blog",
 	"title-separator": "::",
 	"template": "basic"
 }
@@ -23,7 +23,7 @@ def process_inbox():
 		pickle.dump(posts, open("posts.pickled", "w"))
 
 def get_inbox_files():
-	return [ ("inbox/"+file, "inbox/zzz__"+file,) for file in os.listdir("inbox") if not file.startswith("zzz__") ]
+	return [ ("../inbox/"+file, "../inbox/zzz__"+file,) for file in os.listdir("../inbox") if not file.startswith("zaazz__") ]
 
 #post
 
@@ -31,7 +31,7 @@ def make_blogpost(post):
 	title = get_title(post)
 	time = datetime.datetime.now()
 	r = { "title": title, "slug": get_slug(title), "year": time.year, 'month': time.month }
-	dir = "content/%(year)s/%(month)s/" % r;
+	dir = "../%(year)s/%(month)s/" % r;
 	assure_dir(dir);
 	open(dir+r["slug"]+'.html', 'w').write(gen_post_page(post, title))
 	return r
@@ -54,7 +54,7 @@ def assure_dir(dir):
 #index
 
 def update_index(posts):
-	open("content/index.html", "w").write(gen_index(posts))
+	open("../index.html", "w").write(gen_index(posts))
 
 def gen_index(posts):
 	return templatize("index-header", SETUP) + \
@@ -73,7 +73,7 @@ def get_tpl(name):
 	return MEMO['tpl'+name] if name in MEMO else load_tpl(name)
 
 def load_tpl(name):
-	MEMO['tpl'+name] = r = open("templates/%(template)s/%(tplname)s.html" % dict(SETUP, **{"tplname": name })).read()
+	MEMO['tpl'+name] = r = open("../templates/%(template)s/%(tplname)s.html" % dict(SETUP, **{"tplname": name })).read()
 	return r
 
 #util
