@@ -1,6 +1,7 @@
-~> BLGR <~
+BLGR
+====
 
-very crude and minimal cron-based static blog engine written in under 100 lines of python
+very crude and static blog engine written in under 100 lines of python.
 
 
 ~> Why
