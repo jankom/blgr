@@ -1,45 +1,53 @@
 BLGR
 ====
 
-very crude and static blog engine written in under 100 lines of python.
+Crude static blog engine written in under 100 lines of python.
 
 
-~> Why
+Why
+---
 
 - I need a blog for my webapps
-- I don't and don't intend to run apache/php/mysql to have Wordpress (and it's too big and a security liability)
+- I don't and don't intend to run apache/php/mysql just to have Wordpress (and it's too big and a big security liability)
 - I used blogger but that doesn't give me any seo juice 
-	(you can only make it part of your website on DNS level, so with a subdomain. Google sees subdomains as
-	different websites altogether)
+	(you can only make it part of your website on DNS level, so with a subdomain. 
+	But google sees subdomains as a different websites altogether)
 - I don't want to install/run anything additional on the app machine to have a blog
 - So I need a static blog
-- I wrote posts in raw html in WP/blogger anyway, so vim + html code for posts is all I need (markdown could be simply added)
+- I wrote posts in raw html in WP/blogger anyway(I hate WYSIWYG), so emacs + html code for posts is all I need 
+  (markdown could be simply added)
 
 
-~> Why python
+Why python
+----------
 
-- it's already installed on most linux servers and is more reasonable than alternatives (php, perl..)
-- it has the regex and markdown libs
-
-
-~> How to blog
-
-- Add posts as separate files in inbox folder
-- run blgr.py or set is as a cronjob
+- it's already installed on most linux servers and is more reasonable than alternatives (php, perl..) to me
+- it has the needed libs
 
 
-~> Conventions
+How to blog
+-----------
 
-- first <h2> in a post file is a title of the file.
+- after you setup your getmail (example in _stuff/getmailrc) you just send emails to specified email
+
+
+Conventions
+
+- first <h2/> becomes the title, is used in index and to create a slug / filename
 
 
 ~ Future
 
-- files that begin with zzz__ are already turned into posts and should get deleted periodically (will add)
-- index page generation will get a little fancyer once I have enough blogposts to care and test it..
+- add email commands for editind and deleting blogposts
+- make better getmail / procmail / formail example setup that won't let anyone post, etc ..
+- index page generation will have to get a little fancier once I have enough blogposts to care and test it
+- we could do so that thing would accept multipart emails and take the html part (not sure if it's really needed)
+- we could extract attachments and make small gallery of images, turn docs to download links etc
+- we could use zemanta to enrichen the blogpost...
 
 
 ~> History
 
 27.Apr.2011: FIRST ALPHA VERSION
 28.Apr.2011: running on http://refaktorlabs.com/blog
+05.Nov.2011: changed so it runs over email
