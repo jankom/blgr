@@ -32,11 +32,41 @@ How to blog
 
 
 Conventions
+-----------
 
 - first <h2/> becomes the title, is used in index and to create a slug / filename
 
 
-~ Future
+How it works
+------------
+
+It uses unix tools and pipes.
+
+getmail | procmail | formail | blgr.py
+
+
+Instalation
+-----------
+
+- put python script into it's place
+- install Beautiful Soup pythong module
+- Install getmail and set it up (example getmailrc in stuff/)
+
+
+Files
+-----
+
+bin/
+ blgr.py - the blgr script
+ posts.pickled - serialised data about blogposts (so index can be recreated)
+ reset-posts-pickled - script that emties the file above
+ addbp - small utility to add blogpost in commandline
+stuff/
+ getmailrc - example of getmail setup
+
+
+Future
+------
 
 - add email commands for editind and deleting blogposts
 - make better getmail / procmail / formail example setup that won't let anyone post, etc ..
@@ -46,7 +76,8 @@ Conventions
 - we could use zemanta to enrichen the blogpost...
 
 
-~> History
+History
+-------
 
 27.Apr.2011: FIRST ALPHA VERSION
 28.Apr.2011: running on http://refaktorlabs.com/blog
