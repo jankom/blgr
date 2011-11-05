@@ -7,24 +7,14 @@ SETUP = {
 MEMO = {} #we memoize templates
 
 from BeautifulSoup import BeautifulSoup
-import unicodedata, pickle, datetime, re, os, errno
+import unicodedata, pickle, datetime, re, os, errno, sys
 
-def process_inbox():
-	posts = []
-	for file in get_inbox_files():
-		f = open(file[0])
-		posts.insert(0, make_blogpost(f.read()))
-		f.close()
-		os.rename(file[0], file[1])
-	if len(posts):
-		print "found new posts"
-		posts.extend(pickle.load(open("posts.pickled")))
-		update_index(posts)
-		pickle.dump(posts, open("posts.pickled", "w"))
-
-def get_inbox_files():
-	return [ ("../inbox/"+file, "../inbox/zzz__"+file,) for file in os.listdir("../inbox") if not file.startswith("zaazz__") ]
-
+def add_blogpost(cont):
+	posts = pickle.load(open("posts.pickled"))
+	posts.insert(0, make_blogpost(cont))
+	update_index(posts)
+	pickle.dump(posts, open("posts.pickled", "w"))
+	
 #post
 
 def make_blogpost(post):
@@ -87,5 +77,4 @@ def get_slug(value):
 	value = unicode(_slugify_strip_re.sub('', value).strip().lower())
 	return _slugify_hyphenate_re.sub('-', value)
 
-if __name__ == '__main__':
-	process_inbox()
+add_blogpost(sys.stdin.read())

@@ -1,0 +1,31 @@
+[retriever]
+type = SimpleIMAPSSLRetriever
+#server = imap.gmail.com
+#username = my.mailer@gmail.com
+#password = pAsSwoRd 
+server = mail.emailsrvr.com
+username = jane@refaktor.net
+password = MailBBelta4
+mailboxes = ("INBOX",)
+
+[destination]
+type = MultiDestination
+destinations = ('[maildir]', '[msapi]')
+
+[maildir]
+type = Maildir
+path = /home/janko/maildir/
+
+[msapi]
+type = MDA_external
+path = /usr/bin/env
+#arguments = ("sh", "-c", "(source /home/jimny/env.sh; /usr/bin/bash /home/jimny/testmail.bash)")
+arguments = ("sh", "-c", "(/usr/bin/formail -I \"\" | python /home/janko/Work/blgr/bin/blgr.py)")
+
+[options]
+verbose = 2
+message_log = /home/janko/.getmail/getmail.log
+# do NOT delete messages after retrieving
+delete = false
+# only retrieve messages getmail has not seen before
+read_all = false

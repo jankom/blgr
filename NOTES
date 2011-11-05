@@ -1,0 +1,11 @@
+- we could use munpack to extract the images from email and autopost them
+- we could use fallabs's full text indexer for search (comes with cgi script)
+- TODO: add functionality for updating nad deleting the posts
+
+- the wall mode 
+- no update 
+- i follow u message z secret tokenom (ta se doda v header ko se piše)
+- seznam followerjev
+- seznam following
+- I follow U token
+- 
