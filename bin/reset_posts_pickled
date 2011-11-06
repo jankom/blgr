@@ -2,4 +2,4 @@
 
 import pickle
 pickle.dump([], open("posts.pickled", "w"))
-print "Cleared posts picled."
+print "Cleared posts pickled."

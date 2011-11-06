@@ -19,10 +19,10 @@ def make_blogpost(post):
 	title, content = get_title_content(post)
 	t = datetime.datetime.now()
 	r = { "title": title, "slug": get_slug(title), "year": t.year, 
-	      'month': t.month, 'day': t.day, 'hour': t.hour, 'minute': t.minute, 'content': content }
+	      'month': t.month, 'day': t.day, 'hour': t.hour, 'minute': t.minute, 'content': content.decode("utf-8") }
 	dir = "../%(year)s/%(month)s/" % r;
 	assure_dir(dir);
-	open(dir+r["slug"]+'.html', 'w').write(gen_post_page(post, title))
+	open(dir+r["slug"]+'.html', 'w').write(gen_post_page(post, title).encode("utf-8"))
 	return r
 
 def gen_post_page(post, title):
@@ -46,7 +46,7 @@ def assure_dir(dir):
 #index
 
 def update_index(posts, f):
-	open("../"+f, "w").write(gen_index(posts, f.split(".")[0]))
+	open("../"+f, "w").write(gen_index(posts, f.split(".")[0]).encode("utf-8"))
 
 def gen_index(posts, tpl):
 	return templatize(tpl+"-header", SETUP) + \
@@ -91,5 +91,5 @@ if __name__ == "__main__":
 		inp = sys.stdin.read()
 		
 	if inp != None:
-		add_blogpost(inp)
+		add_blogpost(inp.decode("utf-8"))
 		     
