@@ -1,0 +1,30 @@
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = mail.emailsrvr.com
+username = *****
+password = *****
+mailboxes = ("INBOX",)
+
+[destination]
+type = MultiDestination
+destinations = ('[mdapi]',)
+
+[mdapi]
+type = MDA_external
+path = /usr/bin/maildrop
+#arguments = ("-v"),
+unixfrom = True
+
+# directly forwarding contents to blgr
+#[msapi]
+#type = MDA_external
+#path = /usr/bin/env
+#arguments = ("sh", "-c", "(/usr/bin/formail -I \"\" | python /home/janko/Work/blgr/bin/blgr.py)")
+
+[options]
+verbose = 2
+message_log = /home/janko/.getmail/getmail.log
+# do NOT delete messages after retrieving
+delete = false
+# only retrieve messages getmail has not seen before
+read_all = false

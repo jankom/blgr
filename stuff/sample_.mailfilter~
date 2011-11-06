@@ -1,0 +1,7 @@
+if (/^Subject:.*blgr cb 121/)
+{
+	echo "new blogpost recognised"
+	to "|/home/janko/Work/blgr/bin/mail_addbp"
+	to /home/janko/maildir
+	echo "end"
+}
