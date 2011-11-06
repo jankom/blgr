@@ -1,26 +1,25 @@
-SETUP = {
-	"blog-title": "Refaktor Labs Blog",
-	"title-separator": "::",
-	"template": "basic"
-}
+#!/usr/bin/python
 
 MEMO = {} #we memoize templates
 
 from BeautifulSoup import BeautifulSoup
 import unicodedata, pickle, datetime, re, os, errno, sys
+from setup import SETUP
 
 def add_blogpost(cont):
 	posts = pickle.load(open("posts.pickled"))
-	posts.insert(0, make_blogpost(cont))
-	update_index(posts)
+	if cont: posts.insert(0, make_blogpost(cont))
+	update_index(posts, "index.html")
+	update_index(posts, "feed.rss")
 	pickle.dump(posts, open("posts.pickled", "w"))
 	
 #post
 
 def make_blogpost(post):
-	title = get_title(post)
-	time = datetime.datetime.now()
-	r = { "title": title, "slug": get_slug(title), "year": time.year, 'month': time.month }
+	title, content = get_title_content(post)
+	t = datetime.datetime.now()
+	r = { "title": title, "slug": get_slug(title), "year": t.year, 
+	      'month': t.month, 'day': t.day, 'hour': t.hour, 'minute': t.minute, 'content': content }
 	dir = "../%(year)s/%(month)s/" % r;
 	assure_dir(dir);
 	open(dir+r["slug"]+'.html', 'w').write(gen_post_page(post, title))
@@ -31,8 +30,11 @@ def gen_post_page(post, title):
 		"<!--content-->" + post + "<!--/content-->" + \
 		templatize("footer", SETUP)
 
-def get_title(data):
-	return BeautifulSoup(data).find('h2').renderContents()
+def get_title_content(data):
+	s = BeautifulSoup(data)
+	t = s.find('h2')
+	t.extract()
+	return (t.renderContents(), s.renderContents())
 
 def assure_dir(dir):
 	try:
@@ -43,16 +45,16 @@ def assure_dir(dir):
 
 #index
 
-def update_index(posts):
-	open("../index.html", "w").write(gen_index(posts))
+def update_index(posts, f):
+	open("../"+f, "w").write(gen_index(posts, f.split(".")[0]))
 
-def gen_index(posts):
-	return templatize("index-header", SETUP) + \
-		gen_index_list(posts) + \
-		templatize("index-footer", SETUP)
+def gen_index(posts, tpl):
+	return templatize(tpl+"-header", SETUP) + \
+		gen_index_list(posts, tpl) + \
+		templatize(tpl+"-footer", SETUP)
 
-def gen_index_list(posts):
-	return reduce(lambda acc, post: acc + templatize("index-posts", post), posts, "")
+def gen_index_list(posts, tpl):
+	return reduce(lambda acc, post: acc + templatize(tpl+"-posts", dict(SETUP, **post)), posts, "")
 
 #tpl
 
@@ -77,4 +79,17 @@ def get_slug(value):
 	value = unicode(_slugify_strip_re.sub('', value).strip().lower())
 	return _slugify_hyphenate_re.sub('-', value)
 
-add_blogpost(sys.stdin.read())
+
+if __name__ == "__main__":
+	inp = None
+	if len(sys.argv) > 1:
+		if sys.argv[1] == "-r": 
+			inp = 0 ; print "Regenerating the blog."
+		else:
+			print "usage: -r to regen blog, pipe blogpost in to add new."
+	else:
+		inp = sys.stdin.read()
+		
+	if inp != None:
+		add_blogpost(inp)
+		     

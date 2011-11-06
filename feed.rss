@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Refaktor Labs Blog</title>
+    <link>http://www.refaktorlabs.com/blog/</link>
+    <description>Blog about our refaktor labs happs and mishapps</description>
+<item>
+  <title>this is cool NEW title</title>
+  <link>http://www.refaktorlabs.com/blog/2011/11/this-is-cool-new-title.html</link>
+  <description>
+ <p>how are you mumbo jumbo</p>
+</description>
+  <pubDate>2011-11-6 13:38</pubDate>
+</item>
+<item>
+  <title>this is cool NEW title</title>
+  <link>http://www.refaktorlabs.com/blog/2011/11/this-is-cool-new-title.html</link>
+  <description>
+ <p>how are you mumbo jumbo</p>
+</description>
+  <pubDate>2011-11-6 13:37</pubDate>
+</item>
+<item>
+  <title>this is cool NEW title</title>
+  <link>http://www.refaktorlabs.com/blog/2011/11/this-is-cool-new-title.html</link>
+  <description>
+ <p>how are you mumbo jumbo</p>
+</description>
+  <pubDate>2011-11-6 13:35</pubDate>
+</item>
+<item>
+  <title>this is cool NEW title</title>
+  <link>http://www.refaktorlabs.com/blog/2011/11/this-is-cool-new-title.html</link>
+  <description>
+ <p>how are you mumbo jumbo</p>
+</description>
+  <pubDate>2011-11-6 13:33</pubDate>
+</item>
+<item>
+  <title>this is cool NEW title</title>
+  <link>http://www.refaktorlabs.com/blog/2011/11/this-is-cool-new-title.html</link>
+  <description>
+ <p>how are you mumbo jumbo</p>
+</description>
+  <pubDate>2011-11-6 13:27</pubDate>
+</item>
+<item>
+  <title>this is cool NEW title</title>
+  <link>http://www.refaktorlabs.com/blog/2011/11/this-is-cool-new-title.html</link>
+  <description>
+ <p>how are you mumbo jumbo</p>
+</description>
+  <pubDate>2011-11-6 13:23</pubDate>
+</item>
+  </channel>
+</rss>
