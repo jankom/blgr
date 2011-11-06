@@ -5,11 +5,11 @@
 <meta name="keywords" content="" />
 <!--link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.macgamescenter.com/rss.php" /-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>%(blog-title)s %(title-separator)s %(title)s</title>
-<link href="../../templates/basic/main.css" rel="stylesheet" type="text/css" />
+<title>%(blog-title)s</title>
+<link href="templates/basic/main.css" rel="stylesheet" type="text/css" />
 <body onload="">
 <div id="header">    
-	<h1><a href="../../">%(blog-title)s</a></h1>
+	<h1><a href="./">%(blog-title)s</a></h1>
 </div>
 <div id="menu">
 	<div>
@@ -22,7 +22,8 @@
 		}
 	}
 	</style>
-	<p><a href="../../feed.rss"><img class="feed" src="../../templates/basic/feed.png" /> Subscribe with RSS</a></p>
-	<p><a href="../../">Refaktor Labs Home</a></p>
+	<p><a href="/">Refaktor Labs Home</a></p>
+	<p><a href="SOOON!"><img class="feed" src="templates/basic/feed.png" /> Subscribe with RSS</a></p>
 </div>
-<a href="../../">&laquo; blog home</a>
+<h2>Blog posts</h2>
+<ul id="posts">

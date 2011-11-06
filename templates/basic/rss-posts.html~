@@ -1,0 +1,1 @@
+<li><a href="%(year)s/%(month)s/%(slug)s.html">%(title)s</a></li>

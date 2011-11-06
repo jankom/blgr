@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /home/janko/Work/blgr/bin/
+/usr/bin/formail -I "" | python blgr.py
